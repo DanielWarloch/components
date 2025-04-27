@@ -1,3 +1,45 @@
+//! Scroll area for native scroll with cross-browser styling.
+//!
+//! #### Features
+//! - Scroll is fully native.
+//! - Supports vertical, horizontal, and both scroll directions.
+//!
+//! ## Example
+//! ```rust
+//! use dioxus::prelude::*;
+//! use dioxus_primitives::scroll_area::{ScrollArea, ScrollDirection};
+//!
+//! #[component]
+//! fn MyComponent() -> Element {
+//!     rsx! {
+//!         ScrollArea {
+//!             class: "scroll-area",
+//!             direction: ScrollDirection::Vertical,
+//!
+//!             div {
+//!                 class: "scroll-content",
+//!                 for i in 1..40 {
+//!                     p { "Content {i}" }
+//!                 }
+//!             }
+//!         }
+//!     }
+//! }
+//! ```
+//!
+//! ## Props
+//!
+//! | Prop                      | Description                                               | Default                   |
+//! | ------------------------- | --------------------------------------------------------- | ------------------------- |
+//! | `direction`               | The direction of the scroll area.                         | `ScrollDirection::Both`   |
+//! | `always_show_scrollbars`  | Whether the scroll bars should always be visible.         | `false`                   |
+//! | `scroll_type`             | The browser-native scroll type.                           | `ScrollType::Auto`        |
+//!
+//! ### Attributes
+//!
+//! | Attribute                 | States                                |
+//! | ------------------------- | ------------------------------------- |
+//! | `data-scroll-direction`   | `vertical` / `horizontal` / `both`    |
 use dioxus_lib::prelude::*;
 
 #[derive(Props, Clone, PartialEq)]

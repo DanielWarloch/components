@@ -13,3 +13,6 @@ repository = "https://github.com/DioxusLabs/components"
 [dependencies]
 dioxus-lib.workspace = true
 dioxus-time = "=0.1.0-alpha.1"
+
+[dev-dependencies]
+dioxus.workspace = true

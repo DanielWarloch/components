@@ -1,3 +1,54 @@
+//! A two-state button.
+//! 
+//! #### Features
+//! - Supports ARIA keyboard interactions.
+//! - Can be controlled or uncontrolled.
+//! 
+//! ## Example
+//! ```rust
+//! use dioxus::prelude::*;
+//! use dioxus_primitives::switch::{Switch, SwitchThumb};
+//! 
+//! #[component]
+//! fn MyComponent() -> Element {
+//!     rsx! {
+//!         Switch {
+//!             class: "switch",
+//!             default_checked: false,
+//!             on_checked_change: move |new_checked| println!("checked: {new_checked}"),
+//!             
+//!             SwitchThumb { class: "switch-thumb" }
+//!         }
+//!     }
+//! }
+//! ```
+//! 
+//! ## Props
+//! 
+//! | Prop                  | Description                                               | Default   |
+//! | --------------------- | --------------------------------------------------------- | --------- |
+//! | `checked`             | The controlled checked value.                             | `None`    |
+//! | `default_checked`     | The default checked state.                                | `false`   |
+//! | `disabled`            | Whether the switch is disabled.                           | `false`   |
+//! | `required`            | Whether the switch is required in a form.                 | `false`   |
+//! | `name`                | The form name of the switch.                              | `None`    |
+//! | `on_checked_change`   | Callback for state changes. Required with `checked` prop. | `None`    |
+//! 
+//! ### Attributes
+//! 
+//! | Attribute         | States                    | 
+//! | ----------------- | ------------------------- |
+//! | `data-state`      | `checked` or `unchecked`  |
+//! | `data-disabled`   | `true` or `false`         |
+//! 
+//! ## Accessibility
+//! 
+//! Follows the ARIA `switch` [role requirements](https://www.w3.org/WAI/ARIA/apg/patterns/switch/).
+//! 
+//! **Keyboard Interactions**
+//! | Key   | Description           |
+//! | ----- | --------------------- |
+//! | Space | Toggle the switch.    |
 use crate::use_controlled;
 use dioxus_lib::prelude::*;
 

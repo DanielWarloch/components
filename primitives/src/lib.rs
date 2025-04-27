@@ -1,3 +1,6 @@
+//! # Dioxus Primitives
+//! Dioxus primitives is an ARIA-accessible, unstyled, foundational component library for Dioxus based on Radix Primitives. We bring the logic, you bring the styling.
+
 use dioxus_lib::prelude::*;
 
 pub mod accordion;

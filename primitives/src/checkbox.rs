@@ -1,8 +1,74 @@
+//! A tri-state checkbox.
+//!
+//! #### Features
+//! - Supports an `indeterminate` state when controlled.
+//! - Supports ARIA keyboard interactions.
+//! - Can be controlled or uncontrolled.
+//!
+//! ## Example
+//! ```rust
+//! use dioxus::prelude::*;
+//! use dioxus_primitives::checkbox::{Checkbox, CheckboxIndicator, CheckboxState};
+//!
+//! #[component]
+//! fn MyComponent() -> Element {
+//!     rsx! {
+//!         Checkbox {
+//!             class: "checkbox",
+//!             default_checked: CheckboxState::Checked,
+//!             on_checked_change: move |new_checked| println!("checked: {:?}", new_checked),
+//!             
+//!             CheckboxIndicator { class: "checkbox-indicator", "+" }
+//!         }
+//!     }
+//! }
+//! ```
+//!
+//! ## Props
+//!
+//!
+//! #### Checkbox
+//! | Prop                  | Description                                               | Default                    |
+//! | --------------------- | --------------------------------------------------------- | -------------------------- |
+//! | `checked`             | The controlled checked value.                             | `None`                     |
+//! | `default_checked`     | The default checked state.                                | `CheckboxState::Unchecked` |
+//! | `disabled`            | Whether the checkbox is disabled.                         | `false`                    |
+//! | `required`            | Whether the checkbox must be checked in a form.           | `false`                    |
+//! | `value`               | The form value when checked.                              | `on`                       |
+//! | `on_checked_change`   | Callback for state changes. Required with `checked` prop. | `None`                     |
+//!
+//! #### Checkbox Indicator
+//! The checkbox indicator accepts children and global attributes.
+//!
+//! ### Attributes
+//! The set data attributes for the checkbox primitive.
+//!
+//! #### Checkbox
+//! | Attribute         | States                                    |
+//! | ----------------- | ----------------------------------------- |
+//! | `data-state`      | `checked` / `unchecked` / `indeterminate` |
+//! | `data-disabled`   | `true` or `false`                         |
+//!
+//! #### Checkbox Indicator
+//! Always renders a span and conditionally renders provided children based on the checkbox state.
+//! | Attribute         | States                                    |
+//! | ----------------- | ----------------------------------------- |
+//! | `data-state`      | `checked` / `unchecked` / `indeterminate` |
+//! | `data-disabled`   | `true` or `false`                         |
+//!
+//!
+//! ## Accessibility
+//!
+//! Follows the ARIA `checkbox` [pattern](https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/).
+//!
+//! **Keyboard Interactions**
+//! | Key   | Description           |
+//! | ----- | --------------------- |
+//! | Space | Toggle the checkbox.  |
+
 use crate::{use_controlled, use_unique_id};
 use dioxus_lib::{document::eval, prelude::*};
 use std::ops::Not;
-
-// TODO: Docs
 
 #[derive(Debug, Clone, Copy, PartialEq)]
 pub enum CheckboxState {
