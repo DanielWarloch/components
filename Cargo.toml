@@ -10,7 +10,7 @@ dioxus = { git = "https://github.com/DanielWarloch/dioxus", branch = "main" }
 # dioxus = "=0.7.0-alpha.3"
 tracing = { version = "0.1", features = ["std"] }
 
-[patch.crates-io]
+# [patch.crates-io]
 dioxus-geolocation = { git = "https://github.com/DanielWarloch/dioxus-std", branch = "0.7" }
 dioxus-notification = { git = "https://github.com/DanielWarloch/dioxus-std", branch = "0.7" }
 dioxus-sdk = { git = "https://github.com/DanielWarloch/dioxus-std", branch = "0.7" }

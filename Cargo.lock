@@ -9135,38 +9135,3 @@ dependencies = [
  "syn 2.0.104",
  "winnow 0.7.12",
 ]
-
-[[patch.unused]]
-name = "dioxus-geolocation"
-version = "0.7.0-alpha.3"
-source = "git+https://github.com/DanielWarloch/dioxus-std?branch=0.7#6626b92f57ea763fbeac686b9333467a36db6b96"
-
-[[patch.unused]]
-name = "dioxus-notification"
-version = "0.7.0-alpha.3"
-source = "git+https://github.com/DanielWarloch/dioxus-std?branch=0.7#6626b92f57ea763fbeac686b9333467a36db6b96"
-
-[[patch.unused]]
-name = "dioxus-sdk"
-version = "0.7.0-alpha.3"
-source = "git+https://github.com/DanielWarloch/dioxus-std?branch=0.7#6626b92f57ea763fbeac686b9333467a36db6b96"
-
-[[patch.unused]]
-name = "dioxus-sync"
-version = "0.7.0-alpha.3"
-source = "git+https://github.com/DanielWarloch/dioxus-std?branch=0.7#6626b92f57ea763fbeac686b9333467a36db6b96"
-
-[[patch.unused]]
-name = "dioxus-util"
-version = "0.7.0-alpha.3"
-source = "git+https://github.com/DanielWarloch/dioxus-std?branch=0.7#6626b92f57ea763fbeac686b9333467a36db6b96"
-
-[[patch.unused]]
-name = "dioxus-window"
-version = "0.7.0-alpha.3"
-source = "git+https://github.com/DanielWarloch/dioxus-std?branch=0.7#6626b92f57ea763fbeac686b9333467a36db6b96"
-
-[[patch.unused]]
-name = "dioxus_storage"
-version = "0.7.0-alpha.3"
-source = "git+https://github.com/DanielWarloch/dioxus-std?branch=0.7#6626b92f57ea763fbeac686b9333467a36db6b96"
